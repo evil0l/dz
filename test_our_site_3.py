@@ -10,9 +10,9 @@ from webdriver_manager.chrome import ChromeDriverManager
 # 4. заполнить поле password
 # 5. нажать кнопку start
 
-URL = 'https://berpress.github.io/react-shop/'
-LOGIN = 'test@test.com'
-PASSWORD = 'Password1'
+URL = 'https://www.saucedemo.com/'
+LOGIN = 'standard_user'
+PASSWORD = 'secret_sauce'
 
 
 def get_driver():
@@ -37,9 +37,9 @@ def element_click(xpath, driver):
     element.click()
 
 def login(login, password):
-    element_send_keys(xpath="name", driver=driver, text=login)
+    element_send_keys(xpath="user-name", driver=driver, text=login)
     element_send_keys(xpath="password", driver=driver, text=password)
-    element_click(xpath='register', driver=driver)
+    element_click(xpath='login-button', driver=driver)
 
 
 def get_element_by_id(xpath, driver):
