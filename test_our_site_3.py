@@ -52,7 +52,7 @@ def element_send_keys(xpath, driver, text):
     element.send_keys(text)
 
 # 1
-driver = get_driver()
+driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=chrome_options)
 open_page(driver, URL)
 open_login_page()
 login(login=LOGIN, password=PASSWORD)
