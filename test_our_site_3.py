@@ -19,6 +19,7 @@ def get_driver():
     chrome_options = Options()
     chrome_options.add_argument("--window-size=1920,800")
     chrome_options.add_argument('--headless')
+    chrome_options.add_experimental_option('excludeSwitches', ['enable-logging'])
     driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()),
                               options=chrome_options)
     driver.maximize_window()
@@ -28,9 +29,6 @@ def get_driver():
 
 def open_page(driver, url):
     driver.get(url)
-
-def open_login_page():
-    element_click(xpath='login-link', driver=driver)
 
 def element_click(xpath, driver):
     element = get_element_by_id(xpath=xpath, driver=driver)
